@@ -37,7 +37,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="32dp"
         android:gravity="top"
-        android:hint="@string/title"
+        android:hint="@string/title1"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="24sp"
