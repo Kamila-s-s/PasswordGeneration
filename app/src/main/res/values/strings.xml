@@ -2,11 +2,12 @@
     <string name="app_name">PasswordGenerator</string>
     <string name="add_record">Добавить запись</string>
     <string name="save_record">Сохраненные записи</string>
+    <string name="generation_button">Сгенерировать</string>
     <string name="title">Название</string>
-    <string name="login">Login</string>
+    <string name="login">Логин</string>
     <string name="url">URL</string>
     <string name="text">Заметка</string>
     <string name="password">Пароль</string>
     <string name="save">Сохранить</string>
-    <string name="generation_button">Сгенерировать</string>
+    <string name="back">Назад</string>
 </resources>

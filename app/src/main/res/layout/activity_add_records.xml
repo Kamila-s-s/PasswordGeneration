@@ -8,21 +8,6 @@
     android:clipToPadding="true"
     tools:context=".Add_records">
 
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="128dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/title"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/back"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -46,57 +31,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="@string/login"
+  <EditText
+        android:id="@+id/title"
+        android:layout_width="368dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:hint="@string/title"
         android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="368dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:hint="@string/login"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/url"
+        android:layout_width="368dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:hint="@string/url"
         android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/text"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:hint="@string/text"
         android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintHorizontal_bias="0.386"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/url" />
+        app:layout_constraintTop_toBottomOf="@+id/url"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="@string/password"
+        android:layout_width="368dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:hint="@string/password"
         android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text"
         tools:ignore="MissingConstraints" />
