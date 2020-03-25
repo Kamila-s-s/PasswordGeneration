@@ -15,17 +15,19 @@
         android:layout_height="wrap_content"
         android:background="#5D4981"
         android:minHeight="?attr/actionBarSize"
-        app:title="Добавить пароль"
-        app:titleTextColor="@android:color/white"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Добавить пароль"
+        app:titleTextColor="@android:color/white" />
 
-  <EditText
-        android:id="@+id/title"
-        android:layout_width="368dp"
+    <EditText
+        android:id="@+id/title_et"
         android:layout_height="47dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="32dp"
         android:gravity="top"
         android:hint="@string/title1"
@@ -33,14 +35,15 @@
         android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_record_toolbar"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/login"
-        android:layout_width="368dp"
+        android:id="@+id/login_et"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
         android:gravity="top"
@@ -49,14 +52,15 @@
         android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title_et"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/url"
-        android:layout_width="368dp"
+        android:id="@+id/url_et"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
         android:gravity="top"
@@ -65,31 +69,16 @@
         android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/text"
-        android:layout_width="365dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:gravity="top"
-        android:hint="@string/text"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/url"
+        app:layout_constraintTop_toBottomOf="@id/login_et"
         tools:ignore="MissingConstraints" />
 
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="368dp"
+        android:id="@+id/password_et"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_height="47dp"
         android:layout_marginTop="20dp"
         android:gravity="top"
@@ -98,25 +87,24 @@
         android:textColorHint="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintTop_toBottomOf="@id/url_et"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/generation_button"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:background="#96649E"
         android:elevation="6dp"
+        android:onClick="generate"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:shadowColor="#D52929"
         android:text="@string/generation_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/save"
-        app:layout_constraintTop_toTopOf="@id/save"
-        android:onClick="generate"/>
+        app:layout_constraintTop_toTopOf="@id/save" />
 
     <Button
         android:id="@+id/save"
@@ -124,12 +112,12 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:elevation="6dp"
+        android:onClick="savePassword"
         android:shadowColor="#D52929"
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@id/generation_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"
-        android:onClick="savePassword"/>
+        app:layout_constraintTop_toBottomOf="@id/password_et" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

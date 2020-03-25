@@ -1,6 +1,7 @@
 package com.alkam.passwordgenerator.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.alkam.passwordgenerator.database.PasswordDAO
 import com.alkam.passwordgenerator.models.PasswordModel
@@ -18,7 +19,7 @@ class PasswordViewModel(val dao: PasswordDAO, application: Application) :
 
     private val _passwords = MutableLiveData<MutableList<PasswordModel>>()
 
-    val password: LiveData<MutableList<PasswordModel>> get() = _passwords
+    val password: MutableList<PasswordModel>? get() = _passwords.value
 
     init {
         initPasswords()
@@ -27,6 +28,7 @@ class PasswordViewModel(val dao: PasswordDAO, application: Application) :
     private fun initPasswords() {
         uiScope.launch {
             _passwords.value = getPasswordsFromDB()
+            Log.i("AAAAAAAAAAAAAAAAAAAAA", _passwords.value.toString())
         }
     }
 
@@ -47,6 +49,7 @@ class PasswordViewModel(val dao: PasswordDAO, application: Application) :
         uiScope.launch {
             val pwd = PasswordModel(0L, name, login, URL, password)
             _passwords.value?.add(pwd)
+            Log.i("AAAAAAAAAAAAAAAAAAAAA", _passwords.value.toString())
             insert(pwd)
         }
     }

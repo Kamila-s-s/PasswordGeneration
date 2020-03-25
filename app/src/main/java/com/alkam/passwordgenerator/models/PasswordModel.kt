@@ -22,4 +22,10 @@ data class PasswordModel(
 
     @ColumnInfo(name = "name")
     var name: String
-)
+
+
+) {
+    override fun toString(): String {
+        return "$passwordId, $password, $URL, $login, $name"
+    }
+}

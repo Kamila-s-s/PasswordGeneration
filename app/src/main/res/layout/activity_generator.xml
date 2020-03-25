@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#DDBFE3"
     tools:context=".Generator">
 
@@ -13,28 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#5D4981"
-        app:title="Сгенерировать пароль"
-        app:titleTextColor="@android:color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Сгенерировать пароль"
+        app:titleTextColor="@android:color/white" />
 
     <TextView
         android:id="@+id/password_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="ВАШ ПАРОЛЬ"
-        android:textSize="30sp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:gravity="center_horizontal"
+        android:text="ВАШ ПАРОЛЬ"
+        android:textAlignment="center"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/generator_toolbar"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@id/generator_toolbar" />
 
     <TextView
         android:id="@+id/password_length_textView"
@@ -56,7 +56,6 @@
         android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:text="10"
         app:layout_constraintEnd_toStartOf="@id/password_length_up"
         app:layout_constraintStart_toEndOf="@id/password_length_textView"
         app:layout_constraintTop_toTopOf="@id/password_length_textView" />
@@ -65,23 +64,25 @@
         android:id="@+id/password_length_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/password_length_down"
-        app:layout_constraintStart_toEndOf="@id/popup_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_textView"
-        android:padding="0dp"
         android:layout_marginTop="15dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@id/password_length_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/popup_menu"
+        app:layout_constraintTop_toBottomOf="@id/password_textView"
         app:srcCompat="@drawable/ic_arrow_up"
+        android:onClick="onUpClick"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/password_length_down"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/password_length_up"
-        app:layout_constraintStart_toStartOf="@id/password_length_up"
         android:padding="0dp"
+        app:layout_constraintStart_toStartOf="@id/password_length_up"
+        app:layout_constraintTop_toBottomOf="@id/password_length_up"
         app:srcCompat="@drawable/ic_arrow_down"
+        android:onClick="onDownClick"
         tools:ignore="VectorDrawableCompat" />
 
     <CheckBox
@@ -90,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/upper_case"
+        android:checked="true"
         app:layout_constraintStart_toStartOf="@id/password_length_textView"
         app:layout_constraintTop_toBottomOf="@id/password_length_textView" />
 
@@ -97,8 +99,9 @@
         android:id="@+id/lowercase_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lower_case"
         android:layout_marginTop="10dp"
+        android:text="@string/lower_case"
+        android:checked="true"
         app:layout_constraintStart_toStartOf="@id/uppercase_cb"
         app:layout_constraintTop_toBottomOf="@id/uppercase_cb" />
 
@@ -106,9 +109,9 @@
         android:id="@+id/digit_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/digit"
-
         android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="@string/digit"
         app:layout_constraintStart_toStartOf="@id/lowercase_cb"
         app:layout_constraintTop_toBottomOf="@id/lowercase_cb" />
 
@@ -116,40 +119,39 @@
         android:id="@+id/symbol_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/symbol"
         android:layout_marginTop="10dp"
+        android:checked="true"
+        android:text="@string/symbol"
         app:layout_constraintStart_toStartOf="@id/digit_cb"
         app:layout_constraintTop_toBottomOf="@id/digit_cb" />
 
     <Button
-        android:id="@+id/generation_button"
+        android:id="@+id/generation_btn"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:background="#96649E"
         android:elevation="6dp"
+        android:onClick="generate"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:shadowColor="#D52929"
         android:text="@string/generation_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/apply"
-        app:layout_constraintTop_toTopOf="@id/apply"
-        android:onClick="generate"/>
+        app:layout_constraintStart_toEndOf="@id/apply_btn"
+        app:layout_constraintTop_toTopOf="@id/apply_btn" />
 
     <Button
-        android:id="@+id/apply"
+        android:id="@+id/apply_btn"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginTop="25dp"
         android:elevation="6dp"
+        android:onClick="applyPassword"
         android:shadowColor="#D52929"
         android:text="@string/apply"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toStartOf="@id/generation_button"
+        app:layout_constraintEnd_toStartOf="@id/generation_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/symbol_cb"
-        android:onClick="applyPassword"/>
-
-
+        app:layout_constraintTop_toBottomOf="@id/symbol_cb" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
