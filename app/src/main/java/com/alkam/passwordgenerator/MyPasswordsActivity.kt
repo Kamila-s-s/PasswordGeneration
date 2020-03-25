@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alkam.passwordgenerator.database.PasswordDatabase
@@ -21,6 +21,12 @@ import kotlinx.android.synthetic.main.activity_my_passwords.*
 
 class MyPasswordsActivity : AppCompatActivity() {
     private lateinit var viewModel: PasswordViewModel
+
+    private val adapter =
+        PasswordsAdapter(callback = { index: Int ->
+            viewModel.deletePassword(index)
+            passwords_rw.removeViewAt(index)
+        })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +40,13 @@ class MyPasswordsActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(PasswordViewModel::class.java)
 
-        passwords_rw.adapter = PasswordsAdapter(
-            viewModel.password
-        ) { item: Int -> viewModel.deletePassword(item) }
+        passwords_rw.adapter = adapter
+
+        viewModel.password.observe(this, Observer { passwords ->
+            adapter.updateData(passwords)
+        })
     }
 
-    fun addRecords(view: View) {
-        val addRecordsIntent = Intent(this, AddRecords::class.java)
-        startActivity(addRecordsIntent)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -55,8 +59,16 @@ class MyPasswordsActivity : AppCompatActivity() {
     }
 }
 
-class PasswordsAdapter(var items: List<PasswordModel>?, val callback: (index: Int) -> Unit) :
+class PasswordsAdapter(
+    var items: List<PasswordModel> = mutableListOf(),
+    val callback: (index: Int) -> Unit
+) :
     RecyclerView.Adapter<PasswordsAdapter.PasswordsHolder>() {
+
+    fun updateData(list: List<PasswordModel>) {
+        items = list
+        notifyDataSetChanged()
+    }
 
     inner class PasswordsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val name = itemView.findViewById<TextView>(R.id.item_name)
@@ -77,22 +89,21 @@ class PasswordsAdapter(var items: List<PasswordModel>?, val callback: (index: In
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PasswordsHolder {
-        return PasswordsHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PasswordsHolder =
+        PasswordsHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.password_item,
                 parent,
                 false
             )
         )
-    }
 
-    override fun getItemCount(): Int {
-        return items?.size ?: 0
-    }
+
+    override fun getItemCount(): Int = items.size
+
 
     override fun onBindViewHolder(holder: PasswordsHolder, position: Int) {
-        holder.bind(items!![position])
+        holder.bind(items[position])
     }
 
 }
