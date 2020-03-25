@@ -61,14 +61,14 @@ class Generator : AppCompatActivity() {
 
     fun onUpClick(view: View) {
         if (passwordLength < 20) {
-            passwordLength.plus(1)
+            passwordLength += 1
             updateCount()
         }
     }
 
     fun onDownClick(view: View) {
         if (passwordLength > 4) {
-            passwordLength = 1
+            passwordLength -= 1
             updateCount()
         }
     }
@@ -82,12 +82,12 @@ class Generator : AppCompatActivity() {
     }
 
     fun generetor(LCL_flag: Boolean, UCL_flag: Boolean, N_flag: Boolean, SC_flag: Boolean): String {
-        val LOWERCASE_LETTERS = listOf("abcdefghijklmnopqrstuvwxyz")
-        val UPPERCASE_LETTERS = listOf("ABCDEFJHIGKLMNOPQRSTUVW3XYZ")
-        val NUMBERS = listOf("1234567890")
-        val SPECIAL_CHARACTERS = listOf("!@#$%^&*")
+        val LOWERCASE_LETTERS = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ")
+        val UPPERCASE_LETTERS = "A B C D E F J H I G K L M N O P Q R S T U V W X Y Z".split(" ")
+        val NUMBERS = "1 2 3 4 5 6 7 8 9 0".split(" ")
+        val SPECIAL_CHARACTERS = "! @ # $ % ^ & *".split(" ")
 
-        val SET_FOR_PASSWORD: MutableList<String> = mutableListOf()
+        val SET_FOR_PASSWORD: MutableList<CharSequence> = mutableListOf()
 
         if (LCL_flag) {
             SET_FOR_PASSWORD.addAll(LOWERCASE_LETTERS)
@@ -102,7 +102,7 @@ class Generator : AppCompatActivity() {
             SET_FOR_PASSWORD.addAll(SPECIAL_CHARACTERS)
         }
         val password = (SET_FOR_PASSWORD).shuffled().take(passwordLength)
-        return password.toString()
+        return password.joinToString("")
     }
 
 }
