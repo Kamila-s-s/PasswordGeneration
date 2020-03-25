@@ -32,7 +32,7 @@
         android:gravity="top"
         android:hint="@string/title1"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:gravity="top"
         android:hint="@string/login"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
         android:gravity="top"
         android:hint="@string/url"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,11 +84,28 @@
         android:gravity="top"
         android:hint="@string/password"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/url_et"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/note_et"
+        android:layout_height="47dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:gravity="top"
+        android:hint="@string/note"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_et"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -117,7 +134,7 @@
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@id/generation_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_et" />
+        app:layout_constraintTop_toBottomOf="@id/note_et" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

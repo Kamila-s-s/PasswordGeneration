@@ -75,6 +75,7 @@ class PasswordsAdapter(
         private val url = itemView.findViewById<TextView>(R.id.item_url)
         private val login = itemView.findViewById<TextView>(R.id.item_login)
         private val password = itemView.findViewById<TextView>(R.id.item_password)
+        private val note = itemView.findViewById<TextView>(R.id.item_note)
         private val button = itemView.findViewById<ImageButton>(R.id.item_delete_btn)
 
         fun bind(item: PasswordModel) {
@@ -82,6 +83,7 @@ class PasswordsAdapter(
             url.text = item.URL
             login.text = item.login
             password.text = item.password
+            note.text = item.note
             button.setOnClickListener {
                 callback(adapterPosition)
             }

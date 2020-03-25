@@ -34,7 +34,8 @@ class AddRecords : AppCompatActivity() {
                 title_et.text.toString(),
                 login_et.text.toString(),
                 url_et.text.toString(),
-                password_et.text.toString()
+                password_et.text.toString(),
+                note_et.text.toString()
             )
             onBackPressed()
         } else {

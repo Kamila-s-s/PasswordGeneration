@@ -21,9 +21,10 @@ data class PasswordModel(
     var login: String,
 
     @ColumnInfo(name = "name")
-    var name: String
+    var name: String,
 
-
+    @ColumnInfo(name = "note")
+    var note: String
 ) {
     override fun toString(): String {
         return "$passwordId, $password, $URL, $login, $name"

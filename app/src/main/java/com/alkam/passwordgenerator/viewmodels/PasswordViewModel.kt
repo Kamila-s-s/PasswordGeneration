@@ -43,9 +43,9 @@ class PasswordViewModel(val dao: PasswordDAO, application: Application) :
         viewModelJob.cancel()
     }
 
-    fun addPassword(name: String, login: String, URL: String, password: String) {
+    fun addPassword(name: String, login: String, URL: String, password: String, note: String) {
         uiScope.launch {
-            val pwd = PasswordModel(0L, name, login, URL, password)
+            val pwd = PasswordModel(0L, name, login, URL, password, note)
             _passwords.value?.add(pwd)
             insert(pwd)
         }
