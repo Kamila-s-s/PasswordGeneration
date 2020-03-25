@@ -8,24 +8,15 @@
     android:clipToPadding="true"
     tools:context=".AddRecords">
 
-    <Button
-        android:id="@+id/back"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#5D4981"
-        android:text="Назад"
-        app:layout_constraintBottom_toBottomOf="@id/add_record_toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="4dp" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/add_record_toolbar"
-        android:layout_width="414dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#5D4981"
         android:minHeight="?attr/actionBarSize"
+        app:title="Добавить пароль"
+        app:titleTextColor="@android:color/white"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
