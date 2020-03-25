@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#DDBFE3">
+    android:background="#DDBFE3"
+    tools:context=".Generator">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/generator_toolbar"
@@ -141,7 +143,8 @@
         android:text="@string/generation_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/apply"
-        app:layout_constraintTop_toTopOf="@id/apply" />
+        app:layout_constraintTop_toTopOf="@id/apply"
+        android:onClick="generate"/>
 
     <Button
         android:id="@+id/apply"
@@ -153,7 +156,8 @@
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toStartOf="@id/generation_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/symbol_cb" />
+        app:layout_constraintTop_toBottomOf="@id/symbol_cb"
+        android:onClick="applyPassword"/>
 
 
 

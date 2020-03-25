@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".PasswordActivity"
-            android:label="@string/title_activity_password"
-            android:theme="@style/NoActionBar"></activity>
+            android:name=".Generator"
+            android:label="@string/title_activity_generator"
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".MyPasswordsActivity"
             android:label="@string/title_activity_my_passwords"

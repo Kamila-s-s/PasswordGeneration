@@ -124,7 +124,8 @@
         android:text="@string/generation_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/save"
-        app:layout_constraintTop_toTopOf="@id/save" />
+        app:layout_constraintTop_toTopOf="@id/save"
+        android:onClick="generate"/>
 
     <Button
         android:id="@+id/save"
@@ -136,7 +137,8 @@
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@id/generation_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"/>
+        app:layout_constraintTop_toBottomOf="@id/password"
+        android:onClick="savePassword"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
