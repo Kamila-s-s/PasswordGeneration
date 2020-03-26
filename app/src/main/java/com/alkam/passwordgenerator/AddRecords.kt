@@ -39,7 +39,7 @@ class AddRecords : AppCompatActivity() {
             )
             onBackPressed()
         } else {
-            Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.not_all_fields_filled), Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -45,7 +45,7 @@ class Generator : AppCompatActivity() {
             )
             updatePassword()
         } else {
-            Toast.makeText(this, "Хотя бы один пунтк должен быть выбран", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.choose_one_point), Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -31,4 +31,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_generator">Generator</string>
     <string name="note">Заметка</string>
+    <string name="choose_one_point">Хотя бы один пункт должен быть выбран</string>
+    <string name="not_all_fields_filled">Не все поля заполнены</string>
 </resources>
